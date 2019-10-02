@@ -19,6 +19,15 @@ public class App {
 		Employee e10 = new Employee(10, 45, "M", "Naveen", "Jain");
 
 		List<Employee> employees = new ArrayList<Employee>();
+		
+		/*
+		 * They move your conditions (sometimes business logic) to a central place. This
+		 * helps in unit-testing them separately. Any change need not be duplicated into
+		 * multiple places. Java predicate improves code maintenance. The code e.g.
+		 * “filterEmployees(employees, isAdultFemale())” is very much readable than
+		 * writing a if-else block
+		 */
+
 		employees.addAll(Arrays.asList(new Employee[] { e1, e2, e3, e4, e5, e6, e7, e8, e9, e10 }));
 
 		System.out.println(EmployeePredicates.filterEmployees(employees, EmployeePredicates.isAdultMale()));
