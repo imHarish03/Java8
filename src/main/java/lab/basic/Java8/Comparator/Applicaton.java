@@ -36,5 +36,13 @@ public class Applicaton {
 		System.out.println("***********Reversed Order***********");
 		// Let's print the sorted list
 		System.out.println(employees);
+
+		// Sorting on multiple fields; Group by.
+		System.out.println("***********Multiple Sorting***********");
+		Comparator<Employee> groupByComparator = Comparator.comparing(Employee::getFirstName)
+				.thenComparing(Employee::getLastName);
+		employees.sort(groupByComparator);
+
+		System.out.println(employees);
 	}
 }
