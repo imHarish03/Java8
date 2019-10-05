@@ -28,5 +28,13 @@ public class Applicaton {
 
 		// Let's print the sorted list
 		System.out.println(employees);
+
+		// Sort all employees by first name; And then reversed
+		Comparator<Employee> comparator = Comparator.comparing(e -> e.getFirstName());
+		employees.sort(comparator.reversed());
+
+		System.out.println("***********Reversed Order***********");
+		// Let's print the sorted list
+		System.out.println(employees);
 	}
 }
